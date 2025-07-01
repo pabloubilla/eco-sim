@@ -34,11 +34,11 @@ def train_species_model(ecosystem, hidden_size=10, epochs=500, lr=0.01):
 
         model = nn.Sequential(
             nn.Linear(X.shape[1], hidden_size),
-            nn.ELU(),
+            nn.ReLU(),
             nn.Linear(hidden_size, hidden_size),
-            nn.ELU(),
+            nn.ReLU(),
             nn.Linear(hidden_size, hidden_size),
-            nn.ELU(),
+            nn.ReLU(),
             nn.Linear(hidden_size, 1),
             nn.Softplus()  # ensures output > 0
         )
